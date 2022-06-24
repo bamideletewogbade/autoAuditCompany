@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Audit Company</title>
+</head>
+{% block body %}
+<h1>Forms Submitted</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Fullname</th>
+            <th>Reference Code</th>
+            <th>Email</th>
+            <th>Automobile Maker</th>
+            <th>Automobile Model</th>
+            <th>Issues</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fullname in submitted %}
+        <tr>{{ submitted[fullname] }}</tr>
+        <tr>{{ submitted[refCode] }}</tr>
+        <tr>{{ submitted[email] }}</tr>
+        <tr>{{ submitted[maker] }}</tr>
+        <tr>{{ submitted[model] }}</tr>
+        <tr>{{ submitted[issues] }}</tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+</html>
